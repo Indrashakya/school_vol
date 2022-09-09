@@ -1,0 +1,36 @@
+.card {
+  /* Add shadows to create the “card” effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* Add some padding inside the card container */
+.container {
+  display: flex;
+  flex-direction: row;
+justify-content: space-between;
+  padding: 80px 2px;
+}
+.button-container {
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+img {
+margin: 0 auto;
+padding: 0px;
+}
+.btn {
+width: 150px;
+height: 75px;
+}
+.cfa-img {
+height: 150px;
+width: 150px;
+}
+.reward-text {
+font-size: 3em;
+}

@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Home from './Home';
+import Support from './components/Support/Support'
+import Login from '../src/components/login/Login'
+import Signup from './components/signup/Signup'
+import Reward from './components/reward/Reward'
+import Nav from './Nav'
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('Home');
+
+  const renderPage = () => {
+    if (currentPage === 'Home') {
+      return <Home />;
+    }
+    if (currentPage === 'Support') {
+      return <Support />;
+    }
+    if (currentPage === 'Reward') {
+      return <Reward />;
+    }
+    if (currentPage === 'Login') {
+      return <Login />;
+    }
+    if (currentPage === 'Signup') {
+      return <Signup />;
+    }
+  };
+
+  const handlePageChange = (page) => setCurrentPage(page);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav currentPage={currentPage} handlePageChange={handlePageChange} />
+      {renderPage()}
     </div>
   );
 }
